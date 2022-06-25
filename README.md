@@ -4,3 +4,9 @@ Awalnya bahasa pemograman ini dibuat hanya untuk google saja tapi akhirnya golan
 
 
 Repository ini adalah sebuah hasil pembelajaran yang saya dapatkan dari Pak Eko Kannedy beserta dokumentasi golangnya.
+
+
+Ada 3 tipe data dalam golang :
+1. Numbers
+2. String
+3. Boolean
