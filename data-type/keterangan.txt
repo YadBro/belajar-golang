@@ -1,0 +1,24 @@
+Ada 3 tipe data dalam golang :
+1. Numbers
+2. String
+3. Boolean
+
+
+1. Number
+    Numbers adalah sebuah tipe data angka. dalam tipe data numbers adalah 2 tipe data di dalamnya yaitu integer dan juga floating point numbers(desimal)
+Dalam integer terdapat 2 tipe data lagi yaitu "unsigned integer" dan "signed integer".
+
+- unsigned integer adalah sebuah tipe data integer yang angkanya tidak boleh negatif jadi haruslah positif (dimulai dari 0).
+- signed integer adalah sebauh tipe data integer yang angkanya boleh negatif dan boleh positif.
+
+Dalam floating point number(desimal) terdapat 2 tipe lagi yaitu
+- float32 (mengikuti ukuran data atau windows kita kalo 64 bit maka akan pakai float64 begitu sebaliknya)
+- float64 (mengikuti ukuran data atau windows kita kalo 64 bit maka akan pakai float64 begitu sebaliknya)
+
+
+2. String
+    adalah sebuah karakter atau text, diawali dengan tanda petik dua ("Hello World")
+
+
+3. Boolean
+    adalah sebuah tipe data yang hanya memiliki true dan false
