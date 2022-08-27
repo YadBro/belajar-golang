@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+var data string = "check"
 
 func main() {
-	fmt.Println("Hello World")
+	data = "hello golang"
+	fmt.Println(data)
+	fmt.Println(data)
+	fmt.Println(data)
+	fmt.Println(data)
+	fmt.Println(data)
+	datax := true
+	fmt.Println("Dua= ", datax)
+	fmt.Println("Tiga koma lima= "[2])
 }
