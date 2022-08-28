@@ -88,30 +88,31 @@ func main() {
 	// slices[0] = "terpaku"
 	// fmt.Println(slice3)
 
-	mahasiswa := map[string]map[string]string{
-		"001": {
-			"name":    "Udin",
-			"address": "Jl. Kenangan Mantan",
-			"gender":  "Male",
-		},
-		"002": {
-			"name":    "Yadi",
-			"address": "Jl. Kenangan Mantan",
-			"gender":  "Male",
-		},
-		"003": {
-			"name":    "Jamilah",
-			"address": "Jl. Kenangan Mantan",
-			"gender":  "Female",
-		},
-	}
+	// mahasiswa := map[string]map[string]string{
+	// 	"001": {
+	// 		"name":    "Udin",
+	// 		"address": "Jl. Kenangan Mantan",
+	// 		"gender":  "Male",
+	// 	},
+	// 	"002": {
+	// 		"name":    "Yadi",
+	// 		"address": "Jl. Kenangan Mantan",
+	// 		"gender":  "Male",
+	// 	},
+	// 	"003": {
+	// 		"name":    "Jamilah",
+	// 		"address": "Jl. Kenangan Mantan",
+	// 		"gender":  "Female",
+	// 	},
+	// }
 
 	// for key, value := range mahasiswa {
-	// 	delete(mahasiswa, key)
-	// 	fmt.Println(key)
-	// 	fmt.Println(value["name"])
+	// delete(mahasiswa, key)
+	// fmt.Println(key)
+	// fmt.Println(value)
+	// 	fmt.Println("name : ", value["name"], "\naddress :", value["address"])
 	// }
-	fmt.Println(mahasiswa)
+	// fmt.Println(mahasiswa)
 
 	// const name = "yadi"
 	// fmt.Println(name)
