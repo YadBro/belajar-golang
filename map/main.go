@@ -60,6 +60,6 @@ func main() {
 		fmt.Println("students[key]: ", students[key])
 		fmt.Println("students[key][name]: ", students[key]["name"])
 		fmt.Println("students[key][address]: ", students[key]["address"])
-		fmt.Println("name :", value["name"], "\naddress :", value["address"], "\n''")
+		fmt.Println("name :", value["name"], "\naddress :", value["address"], "\n''\n\t")
 	}
 }
