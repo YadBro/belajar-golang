@@ -23,6 +23,44 @@ func main() {
 	testFunction6, _ := name4("Bambang")
 	fmt.Println(testFunction6)
 
+	testFunction7 := sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+	fmt.Println(testFunction7)
+
+	// variadic parameters
+	slice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	testFunction8 := sumAll(slice...)
+	fmt.Println(testFunction8)
+
+	// Function as variable
+	goodbye := getGoodBye
+	fmt.Println(goodbye("yadi"))
+
+	// Function as parameter
+	filter := spamFilter
+
+	sayHelloWithFilter("Anjing", filter)
+	sayHelloWithFilter("Yadi", filter)
+
+	// Anonymous function
+	blacklist := func(name string) bool {
+		return name == "Anjing"
+	}
+
+	registerUser("Yadi", blacklist)
+	registerUser("Anjing", blacklist)
+
+	registerUser("root", func(name string) bool {
+		return name == "root"
+	})
+
+	registerUser("eko", func(name string) bool {
+		return name == "root"
+	})
+
+	value := 10
+	// Loop
+	fmt.Println(factorialLoop(value))
+	fmt.Println(factorialRecursive(value))
 }
 
 // single return
@@ -61,4 +99,57 @@ func name3(name1 string) (name string, name2 string) {
 func name4(name1 string) (name string, name2 string) {
 	name = name1
 	return
+}
+
+// variadic Function
+func sumAll(numbers ...int) (total int) {
+	for _, value := range numbers {
+		total += value
+	}
+	return
+}
+
+func getGoodBye(data1 string) string {
+	return data1
+}
+
+type Filter func(string) string
+
+func sayHelloWithFilter(name string, filter Filter) {
+	nameFiltered := filter(name)
+	fmt.Println("Hello", nameFiltered)
+}
+
+func spamFilter(name string) string {
+	if name == "Anjing" {
+		return "..."
+	} else {
+		return name
+	}
+}
+
+type FilterUser func(string) bool
+
+func registerUser(name string, filter FilterUser) {
+	if filter(name) {
+		fmt.Println(name, "You are blocked!")
+	} else {
+		fmt.Println("Welcome", name)
+	}
+}
+
+func factorialLoop(value int) int {
+	result := 1
+	for i := value; i > 0; i-- {
+		result *= i
+	}
+	return result
+}
+
+func factorialRecursive(value int) int {
+	if value == 1 {
+		return 1
+	} else {
+		return value * factorialRecursive(value-1)
+	}
 }
