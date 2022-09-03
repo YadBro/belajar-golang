@@ -20,6 +20,9 @@ func main() {
 	testFunction5, _ := name3("Bambang")
 	fmt.Println(testFunction5)
 
+	testFunction6, _ := name4("Bambang")
+	fmt.Println(testFunction6)
+
 }
 
 // single return
@@ -52,4 +55,10 @@ func name2(name1 string) (name string) {
 func name3(name1 string) (name string, name2 string) {
 	name = name1
 	return name, name2
+}
+
+// return
+func name4(name1 string) (name string, name2 string) {
+	name = name1
+	return
 }
