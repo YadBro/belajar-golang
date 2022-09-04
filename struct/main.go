@@ -12,8 +12,13 @@ type Customer struct {
 	Married       bool
 }
 
-func sayHi(customer Customer, name string) {
+// Struct function
+func (customer Customer) sayHi(name string) {
 	fmt.Println("Hi", name, "My name is", customer.Name)
+}
+
+func (a Customer) sayBudug(name string) {
+	fmt.Println("Hi", name, "I am", a.Name, "You budug")
 }
 
 func main() {
@@ -36,5 +41,6 @@ func main() {
 	// budi := Customer{"Budi", "Banten", 20} // error
 	// fmt.Println(budi)
 
-	sayHi(yadi, "Joko")
+	yadi.sayHi("Joko")
+	joko.sayBudug("Watasi")
 }
