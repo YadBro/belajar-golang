@@ -15,6 +15,7 @@ func runApplication(val int) {
 
 func main() {
 	// Defer adalah sebuah keyword yang di gunakan untuk menjalankan sebuah function setelah function parent defer tersebut sudah dijalankan walaupun terjadi error sekalipun defer function tersebut akan tetap di jalankan.
+	// Ibarat kata seperti try catch, defer ini adalah try nya dan catch adalah recover
 
 	runApplication(10) // success
 	runApplication(0)  // error
