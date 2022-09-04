@@ -8,10 +8,10 @@ func endApp() {
 
 func runApplication(err bool) {
 	defer endApp()
-	fmt.Println("Run Application")
 	if err {
 		panic("ERROR")
 	}
+	fmt.Println("Run Application")
 }
 
 func main() {
