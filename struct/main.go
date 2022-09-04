@@ -12,6 +12,10 @@ type Customer struct {
 	Married       bool
 }
 
+func sayHi(customer Customer, name string) {
+	fmt.Println("Hi", name, "My name is", customer.Name)
+}
+
 func main() {
 	var yadi Customer
 	yadi.Name = "Yadi"
@@ -31,4 +35,6 @@ func main() {
 
 	// budi := Customer{"Budi", "Banten", 20} // error
 	// fmt.Println(budi)
+
+	sayHi(yadi, "Joko")
 }
