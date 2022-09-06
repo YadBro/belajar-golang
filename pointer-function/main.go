@@ -26,7 +26,6 @@ func (man Man) Married() {
 
 func (man *Man) MarriedPointer() {
 	man.Name = "Mr. " + man.Name
-	fmt.Println("Di method", man.Name)
 }
 
 func main() {
