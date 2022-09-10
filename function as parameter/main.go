@@ -2,7 +2,9 @@ package main
 
 import "fmt"
 
-func SayHelloWithFilter(name string, filter func(string) string) {
+type Filter func(string) string
+
+func SayHelloWithFilter(name string, filter Filter) {
 	nameFiltered := filter(name)
 	fmt.Println("Hello", nameFiltered)
 }
