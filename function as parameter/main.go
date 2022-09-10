@@ -8,8 +8,25 @@ func SayHelloWithFilter(name string, filter func(string) string) {
 }
 
 func SpamFilter(name string) string {
+	if name == "Anjing" {
+		return "..."
+	} else {
+		return name
+	}
+}
+
+func SpamFilter2(name string) string {
 	switch {
 	case name == "Anjing":
+		return "..."
+	default:
+		return name
+	}
+}
+
+func SpamFilter3(name string) string {
+	switch name {
+	case "Anjing":
 		return "..."
 	default:
 		return name
@@ -19,5 +36,6 @@ func SpamFilter(name string) string {
 func main() {
 	filter := SpamFilter
 	SayHelloWithFilter("Anjing", filter)
-	SayHelloWithFilter("Yadi", SpamFilter)
+	SayHelloWithFilter("Yadi", SpamFilter2)
+	SayHelloWithFilter("Eko", SpamFilter3)
 }
