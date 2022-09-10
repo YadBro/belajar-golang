@@ -3,6 +3,10 @@ package main
 import "fmt"
 
 func EndApp() {
+	message := recover()
+	if message != nil {
+		fmt.Println("Error:", message)
+	}
 	fmt.Println("Aplikasi Selesai")
 }
 
@@ -17,4 +21,5 @@ func RunApp(error bool) {
 
 func main() {
 	RunApp(true)
+	fmt.Println("Yadi")
 }
