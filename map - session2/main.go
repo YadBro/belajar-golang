@@ -25,4 +25,11 @@ func main() {
 	delete(book, "ups")
 	fmt.Println(book)
 	fmt.Println(len(book))
+
+	counter := 1
+
+	for counter <= 10 {
+		fmt.Println(counter)
+		counter++
+	}
 }
