@@ -8,9 +8,10 @@ func SayHelloWithFilter(name string, filter func(string) string) {
 }
 
 func SpamFilter(name string) string {
-	if name == "Anjing" {
+	switch {
+	case name == "Anjing":
 		return "..."
-	} else {
+	default:
 		return name
 	}
 }
