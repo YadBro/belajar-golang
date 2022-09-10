@@ -7,5 +7,4 @@ import (
 func main() {
 	helper.GetGreeting2()
 	helper.GetBro("YADI")
-	helper.SayHello("YADI")
 }
