@@ -37,4 +37,14 @@ func main() {
 
 	valueString := strconv.Itoa(999999999999999999)
 	fmt.Println("Itoa :", valueString)
+
+	b := strconv.AppendQuote([]byte("Quote :"), "asiap")
+	c := strconv.Quote("asiap")
+	d := strconv.QuoteRune('#')
+	e := strconv.QuoteRuneToASCII('@')
+	fmt.Println("Hello")
+	fmt.Println(string(b))
+	fmt.Println(string(c))
+	fmt.Println(string(d))
+	fmt.Println(e)
 }
