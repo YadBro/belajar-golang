@@ -12,7 +12,7 @@ Ada 3 tipe data dalam golang :
 2. String
 3. Boolean
 
-Lihat lebih lanjut tentang tipe data golang [di sini](https://www.golang-book.com/books/intro/3). Ataupun [di sini](https://github.com/YadBro/belajar-golang/blob/2.-Tipe-Data/data-type/keterangan.txt).
+Lihat lebih lanjut tentang tipe data golang [di sini](https://www.golang-book.com/books/intro/3).
 
 ## Variable
 
