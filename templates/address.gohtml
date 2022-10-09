@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Title}}</title>
+  </head>
+  <body>
+    <h1>Name : {{.Name}}</h1>
+    {{/* CARA MANUAL
+    <h2>Address Street : {{.Address.Street}}</h2>
+    <h2>Address City : {{.Address.City}}</h2>
+    */}}
+
+    {{with .Address}}
+      <h2>Address Street : {{.Street}}</h2>
+      <h2>Address City : {{.City}}</h2>
+    {{else}}
+      <h1>You not have address</h1>
+    {{end}}
+  </body>
+</html>
