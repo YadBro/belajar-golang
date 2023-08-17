@@ -9,7 +9,7 @@ type Customer struct {
 }
 
 type Address struct {
-	Street     string `json:"Street"`
-	Country    string `json:"Country"`
-	PostalCode string `json:"PostalCode"`
+	Street     string `json:"street"`
+	Country    string `json:"country"`
+	PostalCode string `json:"postalCode"`
 }
