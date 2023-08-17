@@ -5,4 +5,11 @@ type Customer struct {
 	Lastname  string   `json:"lastName"`
 	Age       int      `json:"age"`
 	Hobbies   []string `json:"hobbies"`
+	Addresses []Address
+}
+
+type Address struct {
+	Street     string
+	Country    string
+	PostalCode string
 }
