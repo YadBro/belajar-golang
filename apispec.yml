@@ -1,0 +1,214 @@
+openapi: '3.0.2'
+info:
+  title: API Title
+  description: Api Spec for Category Restful Api
+  version: '1.0'
+servers:
+  - url: http://{environment}/api/v1
+    description: Products API sample dev environment
+    variables:
+      environment:
+        default: localhost:3000
+        description: Development Server
+        enum:
+          - "localhost:8000"
+          - "localhost:3000"
+paths:
+  /categories:
+    get:
+      tags:
+        - "Category API"
+      security:
+        - CategoryAuth: []
+      description: Get All Category
+      summary: List All Categories
+      responses:
+        '200':
+          $ref: '#/components/responses/200allData'
+    post:
+      tags:
+        - "Category API"
+      security:
+        - CategoryAuth: []
+      description: Create new category
+      summary: Create new category
+      requestBody:
+        $ref: '#/components/requestBodies/category'
+
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+
+  /categories/{categoryId}:
+    get:
+      tags:
+        - "Category API"
+      security:
+        - CategoryAuth: []
+      description: "Get category by id"
+      summary: "Get category by id"
+      parameters:
+        - $ref: '#/components/parameters/categoryId'
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+
+    put:
+      tags:
+        - "Category API"
+      security:
+        - CategoryAuth: []
+      description: Update Category By Id
+      summary: Update Category By Id
+      parameters:
+        - $ref: '#/components/parameters/categoryId'
+      requestBody:
+        $ref: '#/components/requestBodies/category'
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+
+    delete:
+      tags:
+        - "Category API"
+      security:
+        - CategoryAuth: []
+      description: "Delete Category By Id"
+      summary: "Delete Category By Id"
+      parameters:
+        - $ref: '#/components/parameters/categoryId'
+      responses:
+        '200':
+          $ref: '#/components/responses/200delete'
+
+
+components:
+  securitySchemes:
+    CategoryAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: Authentication for Category API
+
+  parameters:
+    categoryId:
+      name: categoryId
+      in: path
+      required: true
+      description: Id of category is needs for get one data
+      schema:
+        type: string
+      examples:
+        food:
+          $ref: '#/components/examples/ExampleFoodCategory'
+        drink:
+          $ref: '#/components/examples/ExampleDrinkCategory'
+
+  requestBodies:
+    'category':
+      description: Request category body
+      content:
+        "application/json":
+          schema:
+            $ref: '#/components/schemas/schemaRequestCategoryBody'
+
+  responses:
+    '200allData':
+      description: Success get all category data
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/schemaResponseArray"
+          examples:
+            responseSuccess:
+              $ref: '#/components/examples/ExampleGetAllCategory'
+
+    '200':
+      description: Get one category data
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/schemaResponse"
+          examples:
+            responseSuccess:
+              $ref: '#/components/examples/ExampleGetCategory'
+    
+    '200delete':
+      description: Delete one category data
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/schemaResponseDelete"
+          examples:
+            responseSuccess:
+              $ref: '#/components/examples/ExampleGetCategoryDelete'
+
+  schemas:
+    "schemaCategory":
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+
+    "schemaRequestCategoryBody":
+      type: object
+      properties:
+        name:
+          type: string
+
+    "schemaResponseArray":
+      type: array
+      items:
+        $ref: "#/components/schemas/schemaResponse"
+
+    "schemaResponse":
+      type: object
+      properties:
+        code:
+          type: number
+        status:
+          type: string
+        data:
+          $ref: "#/components/schemas/schemaCategory"
+    
+    "schemaResponseDelete":
+      type: object
+      properties:
+        code:
+          type: number
+        status:
+          type: string
+
+  examples:
+    ExampleGetAllCategory:
+      summary: '200'
+      value:
+        - code: 200
+        - status: 'success'
+        - data:
+            id: 1
+            name: Food
+
+    ExampleGetCategory:
+      summary: '200'
+      value:
+        code: 200
+        status: 'success'
+        data:
+          id: 1
+          name: Food
+    
+    ExampleGetCategoryDelete:
+      summary: '200'
+      value:
+        code: 200
+        status: 'success'
+    
+    ExampleFoodCategory:
+      summary: 'Food'
+      value: /categories/1
+    ExampleDrinkCategory:
+      summary: 'Drink'
+      value: /categories/2
